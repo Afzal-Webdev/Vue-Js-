@@ -285,7 +285,9 @@ export default {
 
             try {
                 // Fetch all users from the API
-                const response = await axios.get(`https://dummyjson.com/users`);
+                const response = await axios.get(
+                `https://dummyjson.com/users?limit=${this.limit}&skip=${skip}`
+            );
                 const allUsers = response.data.users;
 
                 // Filter users based on the selected department and city
